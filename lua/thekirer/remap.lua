@@ -1,3 +1,3 @@
 local nnoremap = require("thekirer.keymap").nnoremap
 
-nnoremap("<leader>pv", "<cmd>Ex<CR>")
+nnoremap("<leader>e", "<cmd>Ex<CR>")
