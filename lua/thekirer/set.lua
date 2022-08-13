@@ -14,4 +14,8 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
+vim.opt.termguicolors = true
+
+vim.opt.cmdheight = 1
+
 vim.g.mapleader = " "

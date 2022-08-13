@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\wrodr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap-virtual-text",
     url = "https://github.com/theHamsta/nvim-dap-virtual-text"
   },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "C:\\Users\\wrodr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "C:\\Users\\wrodr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
