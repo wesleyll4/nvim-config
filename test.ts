@@ -1,3 +1,3 @@
-unction foo() {
+function foo() {
     return 42;
 }

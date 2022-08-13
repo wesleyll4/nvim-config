@@ -4,6 +4,7 @@ require("thekirer.packer")
 require("thekirer.debugger")
 require("thekirer.neogit")
 require("thekirer.lsp")
+require("thekirer.lspconfig")
 
 local augroup = vim.api.nvim_create_augroup
 TheKirerGroup = augroup('TheKirer', {})
