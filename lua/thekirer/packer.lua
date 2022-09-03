@@ -2,15 +2,19 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use("sbdchd/neoformat")
+  use {
+
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+--  use("sbdchd/neoformat")
 
   -- Simple plugins can be specified as strings
-  use("TimUntersberger/neogit")
+  --use("TimUntersberger/neogit")
 
   -- TJ created lodash of neovim
-  use("nvim-lua/plenary.nvim")
   use("nvim-lua/popup.nvim")
-  use("nvim-telescope/telescope.nvim")
 
   -- All the things
   use("neovim/nvim-lspconfig")
