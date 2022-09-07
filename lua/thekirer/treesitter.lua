@@ -1,8 +1,4 @@
-local M = {}
---local Log = require "lvim.core.log"
-
-M.config = function()
-  lvim.builtin.treesitter = {
+require'nvim-treesitter.configs'.setup {
     on_config_done = nil,
     ensure_installed = {}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     ignore_install = {},
@@ -70,28 +66,3 @@ M.config = function()
       max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
     },
   }
-end
-
-M.setup = function()
-  -- avoid running in headless mode since it's harder to detect failures
-  if #vim.api.nvim_list_uis() == 0 then
-    --Log:debug "headless mode detected, skipping running setup for treesitter"
-    return
-  end
-
-  local status_ok, treesitter_configs = pcall(require, "nvim-treesitter.configs")
-  if not status_ok then
-    --Log:error "Failed to load nvim-treesitter.configs"
-    return
-  end
-
-  local opts = vim.deepcopy(lvim.builtin.treesitter)
-
-  treesitter_configs.setup(opts)
-
-  if lvim.builtin.treesitter.on_config_done then
-    lvim.builtin.treesitter.on_config_done(treesitter_configs)
-  end
-end
-
-return M

@@ -1,29 +1,4 @@
-local M = {}
-
-function M.config()
-  local pre_hook = nil
-  if lvim.builtin.treesitter.context_commentstring.enable then
-    pre_hook = function(ctx)
-      local U = require "Comment.utils"
-
-      -- Determine whether to use linewise or blockwise commentstring
-      local type = ctx.ctype == U.ctype.linewise and "__default" or "__multiline"
-
-      -- Determine the location where to calculate commentstring from
-      local location = nil
-      if ctx.ctype == U.ctype.blockwise then
-        location = require("ts_context_commentstring.utils").get_cursor_location()
-      elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-        location = require("ts_context_commentstring.utils").get_visual_start_location()
-      end
-
-      return require("ts_context_commentstring.internal").calculate_commentstring {
-        key = type,
-        location = location,
-      }
-    end
-  end
-  lvim.builtin.comment = {
+    require("Comment").setup({
     active = true,
     on_config_done = nil,
     ---Add a space b/w comment and the line
@@ -75,16 +50,4 @@ function M.config()
     ---Post-hook, called after commenting is done
     ---@type function|nil
     post_hook = nil,
-  }
-end
-
-function M.setup()
-  local nvim_comment = require "Comment"
-
-  nvim_comment.setup(lvim.builtin.comment)
-  if lvim.builtin.comment.on_config_done then
-    lvim.builtin.comment.on_config_done(nvim_comment)
-  end
-end
-
-return M
+  })

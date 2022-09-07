@@ -1,5 +1,5 @@
 local nnoremap = require("thekirer.keymap").nnoremap
-nnoremap("<leader>e", "<cmd>Ex<CR>")
+nnoremap("<leader>e", "<cmd>NvimTreeToggle<CR>")
 
 --Telescope
 nnoremap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
@@ -54,7 +54,7 @@ vnoremap(">", ">gv")
 -- ["p"] = '"0p',
 -- ["P"] = '"0P',
 
-local xnoremap = require("thekirer.keymap").nnoremap
+local xnoremap = require("thekirer.keymap").xnoremap
 -- Move selected line / block of text in visual mode
 xnoremap("K", ":move '<-2<CR>gv-gv")
 xnoremap("J", ":move '>+1<CR>gv-gv")

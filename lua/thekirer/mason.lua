@@ -1,7 +1,4 @@
-local M = {}
-
-function M.config()
-  vim.g.builtin.mason = {
+require("mason").setup({
     ui = {
       keymaps = {
         toggle_package_expand = "<CR>",
@@ -26,16 +23,4 @@ function M.config()
       -- 3. The asset name (e.g. "rust-analyzer-v0.3.0-x86_64-unknown-linux-gnu.tar.gz")
       download_url_template = "https://github.com/%s/releases/download/%s/%s",
     },
-  }
-end
-
-function M.setup()
-  local status_ok, mason = pcall(require, "mason")
-  if not status_ok then
-    return
-  end
-
-  mason.setup(vim.g.builtin.mason)
-end
-
-return M
+  })

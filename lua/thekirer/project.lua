@@ -1,7 +1,4 @@
-local M = {}
-
-function M.config()
-  lvim.builtin.project = {
+require("project_nvim").setup({
     ---@usage set to false to disable project.nvim.
     --- This is on by default since it's currently the expected behavior.
     active = true,
@@ -36,20 +33,5 @@ function M.config()
 
     ---@type string
     ---@usage path to store the project history for use in telescope
-    datapath = get_cache_dir(),
-  }
-end
-
-function M.setup()
-  local status_ok, project = pcall(require, "project_nvim")
-  if not status_ok then
-    return
-  end
-
-  project.setup(lvim.builtin.project)
-  if lvim.builtin.project.on_config_done then
-    lvim.builtin.project.on_config_done(project)
-  end
-end
-
-return M
+    -- datapath = get_cache_dir(),
+  })
