@@ -1,3 +1,6 @@
+require("thekirer.debugger.node");
+require("thekirer.debugger.csharp");
+
 local dap = require("dap")
 local dapui = require("dapui")
 -- local daptext = require("nvim-dap-virtual-text")
@@ -37,7 +40,6 @@ dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
 
-require("thekirer.debugger.node");
 
 nnoremap("<Home>", function()
   dapui.toggle(1)
