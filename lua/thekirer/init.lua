@@ -1,4 +1,5 @@
 require("thekirer.set")
+require("thekirer.debugger")
 require("thekirer.remap")
 require("thekirer.packer")
 require("thekirer.lsp")

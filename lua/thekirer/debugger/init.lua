@@ -1,11 +1,11 @@
 local dap = require("dap")
 local dapui = require("dapui")
-local daptext = require("nvim-dap-virtual-text")
+-- local daptext = require("nvim-dap-virtual-text")
 
 local remap = require("thekirer.keymap")
 local nnoremap = remap.nnoremap
 
-daptext.setup()
+-- daptext.setup()
 dapui.setup({
   layouts = {
     {
